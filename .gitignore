@@ -1,3 +1,4 @@
 launch.json
 settings.json
 .vscode/.prettierrc
+.clj-kondo/.cache/2021.08.07-SNAPSHOT/lock
