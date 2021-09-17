@@ -11,11 +11,11 @@ function grid(numberOfFields) {
   let grid = [];
   const gridSize = 800 / numberOfFields;
 
-  for (let i = 0; i < numberOfFields; i++) {
-    // const element = grid[i];
-    grid[i] = rect(0 + i * gridSize, 0, gridSize, gridSize);
+
+  // draw a rectangle numberOfFields^2 times
+  for (let index = 0; index < numberOfFields; index++) {
+    for (let i = 0; i < numberOfFields; i++) {
+      grid[i] = rect(0 + i * gridSize, index * gridSize, gridSize, gridSize);
+    }
   }
-
-
-
 }
