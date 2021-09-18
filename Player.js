@@ -1,34 +1,47 @@
 class Player {
-  rectX = 400;
-  rectY = 400;
+  positionX = canvasSize / 2;
+  positionY = canvasSize / 2;
 
   constructor() {
-    let test = "test";
-    console.log(test);
+    // if (this.positionX < 0 || this.positionY > 10) {
+    //   this.positionX = 0;
+    //   this.positionY = 0;
+    // }
   }
 
-  playerRect() {
-    let speed = 3;
+  movement() {
+    switch (key) {
+      case value:
+        break;
+
+      default:
+        break;
+    }
+  }
+
+  playerRect(gridSize) {
+    let stepSize = gridSize;
     switch (key) {
       case "w":
-        this.rectY = this.rectY - speed;
+        this.positionY -= stepSize;
         break;
       case "a":
-        this.rectX = this.rectX - speed;
+        this.positionX -= stepSize;
         break;
       case "s":
-        this.rectY = this.rectY + speed;
+        this.positionY += stepSize;
         break;
       case "d":
-        this.rectX = this.rectX + speed;
+        this.positionX += stepSize;
         break;
     }
     clear();
-    rect(this.rectX, this.rectY, 40, 40);
+    fill(0);
+    rect(this.positionX, this.positionY, gridSize, gridSize);
     if (key == "w" || key == "s") {
-      return this.rectY;
+      return this.positionY;
     } else {
-      return this.rectX;
+      return this.positionX;
     }
   }
 }
