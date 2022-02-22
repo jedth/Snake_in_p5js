@@ -35,7 +35,7 @@ class Player {
         this.positionX += stepSize;
         break;
     }
-    clear();
+    // clear();
     fill(0);
     rect(this.positionX, this.positionY, gridSize, gridSize);
     if (key == "w" || key == "s") {

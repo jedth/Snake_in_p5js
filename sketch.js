@@ -11,10 +11,10 @@ let backgroundGraphics;
 
 function setup() {
   createCanvas(canvasSize, canvasSize);
-  backgroundGraphics = createGraphics(canvasSize, canvasSize);
+  // backgroundGraphics = createGraphics(canvasSize, canvasSize);
   background(220);
   frameRate(12);
-  backgroundGraphics = grid(30);
+  // grid(30);
 }
 
 function draw() {
@@ -22,18 +22,12 @@ function draw() {
   fruit();
 }
 
+// draw grid
 function grid(numberOfFields) {
   // draw a rectangle numberOfFields^2 times
   for (let index = 0; index < numberOfFields; index++) {
     for (let i = 0; i < numberOfFields; i++) {
-      if (index == player.positionY && i == player.positionX) {
-        fill(150);
-        rect(0 + i * gridSize, index * gridSize, gridSize, gridSize);
-      } else {
-        fill(255);
-        rect(0 + i * gridSize, index * gridSize, gridSize, gridSize);
-      }
-      // rect(0 + i * gridSize, index * gridSize, gridSize, gridSize);
+      rect(0 + i * gridSize, index * gridSize, gridSize, gridSize);
 
       //debugging
       fill(1);
@@ -43,8 +37,12 @@ function grid(numberOfFields) {
   }
 }
 
+// draw fruit 
 function fruit() {
+  let exists = true;
   let x = random(0, canvasSize);
   let y = random(0, canvasSize);
-  rect(x, y, gridSize);
+  if ((x == player.positionX) && (y == player.positionY) || (exists == false)) {
+    rect(x, y, gridSize);
+  }
 }
